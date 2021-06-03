@@ -1,2 +1,2 @@
 # camera-calibration
-This project uses CERES and OpenCV to estimate the a camera's intrinsics
+This project uses Ceres and OpenCV to estimate a camera's intrinsics
