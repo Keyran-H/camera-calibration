@@ -20,4 +20,9 @@ Compile the executable within the build directory: `make`
 
 Execute the generated executable: `./nlo-camera-calibration`
 
-The executable uses gflags which are documented in the source code. The defaults are set to use my images to demonstrate functionality. In summary, the parameters which can be changed are the initial estimates, calibration board parameters and reading/writing to disk options.
+The executable uses gflags which are documented in the source code.
+- Defaults are set to use my images to demonstrate out of box functionality.
+- In summary, the parameters which can be changed are:
+  - Initial estimates
+  - Calibration board parameters
+  - Read/Write disk options
