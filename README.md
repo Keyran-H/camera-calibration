@@ -1,5 +1,5 @@
 # Ceres & OpenCV bundle adjustment solution 
-This project presents a Ceres based approach for camera calibration.
+This project presents a Ceres based approach for camera calibration. TODO: Add a small blurb of how this repo is helpful and then show some evidence of my working code.
 ## Running the code
 
 ### Installing Dependencies 
@@ -11,7 +11,7 @@ Globablly installed [CERES](http://ceres-solver.org/installation.html#linux) and
 
 ### Building & Compiling
 
-Generate the build files by changing to the build directory and running the top level CMakeList.txt:
+Generate the build files by running the top level CMakeList.txt within the build directory:
 `cd build && cmake ..`
 
 Compile the executable within the build directory: `make`
@@ -20,4 +20,4 @@ Compile the executable within the build directory: `make`
 
 Execute the generated executable: `./nlo-camera-calibration`
 
-The executable uses gflags which are documented in the source code. The defaults are set to use my images to demonstrate functionality. In summary, the parameters which can be changed are the initial estimates, reading/writing to disk options and calibration board parameters.
+The executable uses gflags which are documented in the source code. The defaults are set to use my images to demonstrate functionality. In summary, the parameters which can be changed are the initial estimates, calibration board parameters and reading/writing to disk options.
