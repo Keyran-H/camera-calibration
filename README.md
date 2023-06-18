@@ -16,12 +16,8 @@ Generate the build files by changing to the build directory and running the top 
 
 Compile the executable within the build directory: `make`
 
-// Finish the instructions for running.
-    // [optional] state how to use the gflags.
-
 ### Running
 
-Fornow:
-- Write every step you took
-- Get stuff to work
-- Make readme
+Execute the generated executable: `./nlo-camera-calibration`
+
+The executable uses gflags which are documented in the source code. The defaults are set to use my images to demonstrate functionality. In summary, the parameters which can be changed are the initial estimates, reading/writing to disk options and calibration board parameters.
