@@ -5,6 +5,8 @@
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/imgcodecs.hpp>
 #include <opencv2/calib3d/calib3d.hpp>
+#include <sys/stat.h>
+#include <dirent.h>
 #include "opencv2/highgui/highgui.hpp"
 #include <vector>
 #include "ceres/ceres.h"
@@ -434,6 +436,17 @@ int main(int argc, char **argv)
     std::cout << "Image error rms: " << rms_error[z] << "\r\n\n";
   }
 
+  // Make the directory if it doesn't exist
+  DIR *pDir = opendir(directory.c_str());
+  if (pDir == NULL)
+  {
+    int isDirCreated = mkdir(directory.c_str(), 0777);
+    if (isDirCreated != 0)
+    {
+      std::cout << "Failed to create directory: " << directory << std::endl;
+    }
+  }
+
   // Superimpose the processed chessboard corners on the calibration images and write images to disk
   for (int z = 0; z != total_chessboards_detected; z++)
   {
@@ -442,7 +455,7 @@ int main(int argc, char **argv)
     cv::drawChessboardCorners(images[z], patternsize, processed_chessboard_corners[z], true);
     std::string full_directory = directory + filename;
     
-    imwrite(full_directory.c_str(), images[z]);
+    imwrite(full_directory.c_str(), images[z]); //TODO: Make the full directory before writing images. imwrite cannot do it. cv2.imwrite(os.path.join(dirname, face_file_name), image)
   }
 
   return 0;
