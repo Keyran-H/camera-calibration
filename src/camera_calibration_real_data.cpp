@@ -455,8 +455,7 @@ int main(int argc, char **argv)
     cv::drawChessboardCorners(images[z], patternsize, processed_chessboard_corners[z], true);
     std::string full_directory = directory + filename;
     
-    imwrite(full_directory.c_str(), images[z]); //TODO: Make the full directory before writing images. imwrite cannot do it. cv2.imwrite(os.path.join(dirname, face_file_name), image)
-  }
+    imwrite(full_directory.c_str(), images[z]);
 
   return 0;
 }
