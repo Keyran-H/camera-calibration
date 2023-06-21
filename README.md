@@ -30,3 +30,5 @@ The executable uses gflags which are documented in the source code.
   - Initial estimates
   - Calibration board parameters
   - Read/Write disk options
+- gflag example:
+  - Write processed images to a specified directory "test": `./nlo-camera-calibration -write_directory=test/`
