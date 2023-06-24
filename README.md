@@ -4,7 +4,7 @@ This project presents a Ceres based solution for estimating a camera's intrinsic
 
 The image on the left shows an example of a raw image used for estimating the camera intrinsics. The right shows the redrawn board points which was computed based on the optimized camera intrinsics.
 
-<p float="left">
+<p float="center">
   <img src="media/image01.jpg" width="45%"/>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <img src="media/image00.jpg" width="45%"/>
@@ -20,7 +20,7 @@ The image below is a snippet of terminal output. The snippet shows that it took 
 
 ### Installing Dependencies
 
-Globablly installed [Ceres](http://ceres-solver.org/installation.html#linux) and [OpenCV](https://docs.opencv.org/4.x/d7/d9f/tutorial_linux_install.html) libraries are used in this project. Specify the PATH variable in CMakeLists.txt if a local version is desired to be used. The software versions used are:
+Globablly installed [Ceres](http://ceres-solver.org/installation.html#linux) and [OpenCV](https://docs.opencv.org/4.x/d7/d9f/tutorial_linux_install.html) libraries are used in this project. Specify the PATH variable in [CMakeLists.txt](CMakeLists.txt) if a local version is desired to be used. The software versions used are:
 
 - OS: Ubuntu 18.04
 - CERES: 2.1.0
