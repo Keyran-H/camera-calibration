@@ -24,9 +24,9 @@ This project requires specific legacy dependencies.
 - CERES: 2.1.0
 - OpenCV: 3.2.0
 
-Two methods for building and running the executable are described: using Docker (Recommended) or Native Build. Afterwards, the executable flags are stated.
+Choose between the [Docker Build](#docker-build) (recommended) or  [Native Build](#native-build-alternative) section to compile and run the project. Available command-line options are detailed under [Executable Flags](#executable-flags) section.
 
-## Docker Build (Recommended) 
+## Docker Build 
 
 The Docker image automatically provides the required OS, CERES, and OpenCV environments.
 
@@ -35,7 +35,7 @@ The Docker image automatically provides the required OS, CERES, and OpenCV envir
 3. Build and compile inside the container: `cd build && cmake .. && make -j$(nproc) && cd ..`
 4. Execute the binary: `./build/nlo-camera-calibration`
 
-## Native Build (Alternative)
+## Native Build
 
 1. Install the [Ceres](http://ceres-solver.org/installation.html#linux) and [OpenCV](https://docs.opencv.org/4.x/d7/d9f/tutorial_linux_install.html) libraries globally.
    - *Note: `CMakeLists.txt` is configured for a global installation. If using a local installation, specify the `PATH` variable directly in `CMakeLists.txt`.*
