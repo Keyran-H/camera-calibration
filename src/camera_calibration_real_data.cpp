@@ -14,8 +14,6 @@
 #include <gflags/gflags.h>
 #include <string>
 
-// TODO: Consider forcing the user to enter all the fields incase he/she may have forgotten to enter one. Perhaps tell user which fields he did not enter as a warning.
-
 // Definitions for the gflags
 DEFINE_double(fx, 900, "Used to set an initial estimate for the fx, camera intrinsic");
 DEFINE_double(fy, 900, "Used to set an initial estimate for the fy, camera intrinsic");
@@ -25,7 +23,7 @@ DEFINE_uint64(internal_corners_x, 7, "Used to set the number of internal number 
 DEFINE_uint64(internal_corners_y, 6, "Used to set the number of internal number of corners for the rows of the calibration board");
 DEFINE_double(block_dimension, 0.02, "Used to set the dimension of a single side of a block from the calibration board in meters");
 DEFINE_string(read_directory, "../Calibration_images_numbered/", "Used to set the directory of the folder containing the calibration images");
-DEFINE_string(write_directory, "../Processed_calibration_images_numbered/", "Used to set the directory of the folder to write the processed calibration images to");
+DEFINE_string(write_directory, "./Processed_calibration_images_numbered/", "Used to set the directory of the folder to write the processed calibration images to");
 DEFINE_string(read_image, "image%02d.jpg", "Used to set the naming convention of the images to be read from disk");
 DEFINE_string(write_image, "image%02d.jpg", "Used to set the naming convention of the images to be written to disk");
 
