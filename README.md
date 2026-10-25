@@ -16,34 +16,42 @@ The image below is a snippet of terminal output. The snippet shows that it took 
     <img src="media/terminal.png"/>
 </p>
 
-## Running the code
+# Running the code
 
-### Installing Dependencies
-
-Globablly installed [Ceres](http://ceres-solver.org/installation.html#linux) and [OpenCV](https://docs.opencv.org/4.x/d7/d9f/tutorial_linux_install.html) libraries are used in this project. Specify the PATH variable in [CMakeLists.txt](CMakeLists.txt) if a local version is desired to be used. The software versions used are:
+This project requires specific legacy dependencies.
 
 - OS: Ubuntu 18.04
 - CERES: 2.1.0
 - OpenCV: 3.2.0
 
-### Building & Compiling
+Two methods for building and running the executable are described: using Docker (Recommended) or Native Build. Afterwards, the executable flags are stated.
 
-Generate the build files by running the top level CMakeList.txt within the build directory:
-`cd build && cmake ..`
+## Docker Build (Recommended) 
 
-Compile the executable within the build directory: `make`
+The Docker image automatically provides the required OS, CERES, and OpenCV environments.
 
-### Running
+1. Build the Docker image from root: `docker build -t camera-calibration .`
+2. Run the interactive container: `docker run --rm -it -v $(pwd):/workspace camera-calibration`
+3. Build and compile inside the container: `cd build && cmake .. && make -j$(nproc) && cd ..`
+4. Execute the binary: `./build/nlo-camera-calibration`
 
-Execute the generated executable: `./nlo-camera-calibration`
+## Native Build (Alternative)
 
-The executable uses gflags.
+1. Install the [Ceres](http://ceres-solver.org/installation.html#linux) and [OpenCV](https://docs.opencv.org/4.x/d7/d9f/tutorial_linux_install.html) libraries globally.
+   - *Note: `CMakeLists.txt` is configured for a global installation. If using a local installation, specify the `PATH` variable directly in `CMakeLists.txt`.*
+2. Generate the build files by running the top-level CMakeLists.txt within the build directory: `cd build && cmake ..`
+3. Compile the executable and return to root: `make && cd ..`
+4. Execute the binary: `./build/nlo-camera-calibration`
 
-- Documentation can be found using the command: `./nlo-camera-calibration --help`
-  - In summary, the gflags parameters which can be changed are:
-    - Initial estimates
-    - Calibration board parameters
-    - Read/Write disk options
-- gflag defaults are set to use my images to demonstrate out of box functionality.
+## Executable Flags
+
+The executable uses gflags. 
+
+- Documentation can be found using the command: `./build/nlo-camera-calibration --help`
+- In summary, the gflags parameters which can be changed are:
+  - Initial estimates
+  - Calibration board parameters
+  - Read/Write disk options
+- gflag defaults are set to use the provided sample images to demonstrate out-of-the-box functionality.
 - gflag example:
-  - Write processed images to a specified directory "test": `./nlo-camera-calibration -write_directory=test/`
+  - Write processed images to a specified directory "test": `./build/nlo-camera-calibration -write_directory=test/`
