@@ -32,15 +32,15 @@ The Docker image automatically provides the required OS, CERES, and OpenCV envir
 
 1. Build the Docker image from root: `docker build -t camera-calibration .`
 2. Run the interactive container: `docker run --rm -it -v $(pwd):/workspace camera-calibration`
-3. Build and compile inside the container: `cd build && cmake .. && make -j$(nproc) && cd ..`
-4. Execute the binary: `./build/nlo-camera-calibration`
+3. Build and compile inside the container: `cd build && cmake .. && make -j$(nproc)`
+4. Execute the binary: `./nlo-camera-calibration`
 
 ## Native Build
 
 1. Install the [Ceres](https://ceres-solver.readthedocs.io/latest/installation.html#installation) and [OpenCV](https://docs.opencv.org/4.x/d7/d9f/tutorial_linux_install.html) libraries globally.
    - *Note: `CMakeLists.txt` is configured for a global installation. If using a local installation, specify the `PATH` variable directly in `CMakeLists.txt`.*
-2. Build and compile: `cd build && cmake .. && make -j$(nproc) && cd ..`
-3. Execute the binary: `./build/nlo-camera-calibration`
+2. Build and compile: `cd build && cmake .. && make -j$(nproc)`
+3. Execute the binary: `./nlo-camera-calibration`
 
 ## Executable Flags
 
