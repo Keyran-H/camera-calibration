@@ -456,6 +456,7 @@ int main(int argc, char **argv)
     std::string full_directory = directory + filename;
     
     imwrite(full_directory.c_str(), images[z]);
+  }
 
   return 0;
 }
