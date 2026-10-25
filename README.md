@@ -24,7 +24,7 @@ This project requires specific legacy dependencies.
 - CERES: 2.1.0
 - OpenCV: 3.2.0
 
-Choose between the [Docker Build](#docker-build) (recommended) or  [Native Build](#native-build-alternative) section to compile and run the project. Available command-line options are detailed under [Executable Flags](#executable-flags) section.
+Choose between the [Docker Build](#docker-build) (recommended) or  [Native Build](#native-build) section to compile and run the project. Available command-line options are detailed under [Executable Flags](#executable-flags) section.
 
 ## Docker Build 
 
